@@ -11,7 +11,7 @@ const DrinkItem: React.FC<{
     return (
       <View className="w-full">
         <TouchableOpacity
-          className="m-2 p-2 bg-[#900827] rounded-xl shadow-md"
+          className="my-1 p-2 bg-[#900827] rounded-xl shadow-md"
           onPress={() => navigate(data.idDrink)}
         >
           <View className="flex-row items-center">

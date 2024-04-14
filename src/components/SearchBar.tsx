@@ -4,14 +4,12 @@ import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import useInput from '../hooks/useInput';
 
 const SearchBar: React.FC<{
-  query: string;
-  onQueryChange: (text: string) => void;
   onSearch: (query: string) => void;
 }> = ({
-  query,
-  onQueryChange,
   onSearch
 }) => {
+    const [query, onQueryChange] = useInput('');
+
     return (
       // <View className="flex-row items-center bg-white p-2 rounded border border-gray-300">
       //   <TextInput
@@ -25,7 +23,7 @@ const SearchBar: React.FC<{
       //   </TouchableOpacity>
       // </View>
 
-      <View className="px-2 w-full">
+      <View className="w-full">
         <View className="bg-rose-900 rounded-xl px-4 py-2 flex-row items-center">
           <TouchableOpacity onPress={() => onSearch(query!)}>
             <FontAwesome name="search" size={20} color="#CEC3CD" />
